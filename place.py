@@ -11,12 +11,14 @@ class Place:
     # mark_visited
     def mark_visited(self):
         self.visited = True
+
     # mark_unvisited
     def mark_unvisited(self):
         self.visited = False
+
     # is_important
     def is_important(self):
-        return self.priority <=2
+        return self.priority <= 2
 
     def __l__(self, other):
         return self.priority < other.priority

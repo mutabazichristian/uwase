@@ -1,0 +1,58 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: "40dp"
+        Label:
+            text: "Name"
+        TextInput:
+            id: name_input
+            multiline: False
+        Label:
+            text: "Country"
+        TextInput:
+            id: country_input
+            multiline: False
+        Label:
+            text: "Priority"
+        TextInput:
+            id: priority_input
+            multiline: False
+        Button:
+            text: "Add Place"
+            on_release: app.add_place()
+        Button:
+            text: "Clear"
+            on_release: app.clear_fields()
+
+    Label:
+        id: status_label
+        size_hint_y: None
+        height: "40dp"
+        text: app.status_text
+
+    BoxLayout:
+        orientation: 'vertical'
+        id: places_box
+
+    Label:
+        size_hint_y: None
+        height: "40dp"
+        text: "Sort by:"
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: "40dp"
+        Button:
+            text: "Name"
+            on_release: app.sort_places('name')
+        Button:
+            text: "Country"
+            on_release: app.sort_places('country')
+        Button:
+            text: "Priority"
+            on_release: app.sort_places('priority')
+        Button:
+            text: "Visited"
+            on_release: app.sort_places('visited')
